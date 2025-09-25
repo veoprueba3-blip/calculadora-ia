@@ -140,7 +140,7 @@
         
         @media (max-width: 480px) {
             .header { padding: 20px 15px; }
-            .header h1 { font-size: 1.6rem; }
+            .header h1 { font-size: 1.5rem; }
             .card { padding: 15px; }
             .card h2 { font-size: 1.4rem; }
             .final-price { font-size: 2.2rem; }
@@ -161,7 +161,6 @@
             <h1>🎂 Calculadora Profesional express de Pastelería 🧁</h1>
             <p>Descubre el precio justo que valora tu trabajo y te deja ganancias reales en minutos</p>
         </div>
-
         <div class="card">
             <h2>📝 Dale un Nombre a tu Cálculo</h2>
             <p class="section-description" style="margin-top: 0;">Este nombre se usará para guardar tu receta y en tus cotizaciones.</p>
@@ -190,12 +189,14 @@
             <div class="info-toggle-red" onclick="toggleInfo('modes')"><span>💡 TOCA AQUÍ PARA ENTENDER CUÁL MODO ELEGIR</span><span class="toggle-icon">▼</span></div><div id="modes-info" class="info-content"><div class="info-box-red"><h3>🤔 ¿Cuál modo debo elegir?</h3><p><strong>Muy fácil: Todo depende de cómo quieres pensar sobre tu ganancia.</strong></p><div style="background: #E8F4FD; padding: 20px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #4A90E2;"><h4 style="color: #4A90E2; margin-bottom: 15px;">🌟 MODO FÁCIL - Para cuando apenas empiezas</h4><p><strong>Piensa así:</strong> "Mis costos son $10,000. Quiero ganar $5,000 encima. Total = $15,000"</p><p><strong>Ejemplo real:</strong></p><p>• Tu pastel te costó $20,000 (ingredientes + tiempo + todo)</p><p>• Quieres ganar 60% más de lo que gastaste</p><p>• <strong>Precio final = $32,000</strong> (tu ganancia = $12,000)</p><p style="color: #4A90E2;"><strong>💡 Perfecto para:</strong> Principiantes, ventas a amigos/familia, productos básicos</p></div><div style="background: #F0EFFF; padding: 20px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #7B68EE;"><h4 style="color: #7B68EE; margin-bottom: 15px;">🚀 MODO PROFESIONAL - Para cuando ya tienes experiencia</h4><p><strong>Piensa así:</strong> "De cada $100 que cobre, quiero que $50 sean ganancia pura"</p><p><strong>Ejemplo real:</strong></p><p>• Tu pastel te costó $20,000 (mismo costo)</p><p>• Quieres que el 50% del precio final sea ganancia</p><p>• <strong>Precio final = $40,000</strong> (tu ganancia = $20,000)</p><p style="color: #7B68EE;"><strong>💡 Perfecto para:</strong> Negocios establecidos, clientes corporativos, productos premium</p></div><div style="background: #FFF9E6; padding: 20px; border-radius: 15px; margin: 20px 0; border: 2px solid #FFD700;"><h4 style="color: #B8860B; margin-bottom: 15px;">⚡ RESUMEN SÚPER FÁCIL:</h4><p><strong>• Modo Fácil:</strong> "Quiero ganar X% más de lo que gasté"</p><p><strong>• Modo Profesional:</strong> "Quiero que X% de lo que cobre sea ganancia pura"</p><br><p><strong>🎯 Consejo:</strong> Si apenas empiezas, usa Modo Fácil. Si ya vendes bien y quieres ser más profesional, usa Modo Profesional.</p></div></div></div><div class="mode-selector"><div class="mode-card" id="easy-mode" onclick="selectMode('easy')"><div class="mode-icon">🌟</div><div class="mode-title" style="color: #4A90E2;">Modo Fácil</div><div class="mode-subtitle">Recomendado para principiantes</div><div class="mode-explanation"><strong>Tus costos + la ganancia que quieres = el precio de venta</strong></div></div><div class="mode-card" id="professional-mode" onclick="selectMode('professional')"><div class="mode-icon">🚀</div><div class="mode-title" style="color: #7B68EE;">Modo Profesional</div><div class="mode-subtitle">Para negocios en crecimiento</div><div class="mode-explanation"><strong>Cálculo empresarial para saber la ganancia real</strong></div></div></div><div id="calculator-section" class="calculator-section"><div class="percentage-guide-section"><div class="info-toggle" onclick="toggleInfo('percentage-guide')"><span>🎯 GUÍA: ¿QUÉ PORCENTAJE USAR SEGÚN TU SITUACIÓN?</span><span class="toggle-icon">▼</span></div><div id="percentage-guide-info" class="info-content"><div class="percentage-guide-grid"><div class="percentage-card basic"><div class="percentage-value">30-50%</div><div class="percentage-title">Productos Básicos</div><div class="percentage-description">Ideal para productos simples, clientes frecuentes o cuando estás empezando tu negocio</div></div><div class="percentage-card standard"><div class="percentage-value">50-80%</div><div class="percentage-title">Productos Estándar</div><div class="percentage-description">Perfecto para productos personalizados y decoraciones de nivel intermedio</div></div><div class="percentage-card premium"><div class="percentage-value">80-100%</div><div class="percentage-title">Productos Premium</div><div class="percentage-description">Para diseños complejos, productos especializados o eventos importantes</div></div><div class="percentage-card luxury"><div class="percentage-value">100%+</div><div class="percentage-title">Productos de Lujo</div><div class="percentage-description">Para productos únicos, pedidos urgentes o diseños muy exclusivos</div></div></div></div></div><div class="slider-container"><h3 id="calculator-title" style="color: #444; margin-bottom: 15px;">Ajusta tu Ganancia</h3><p id="calculator-explanation" style="color: #666; margin-bottom: 20px;"></p><input type="range" min="10" max="100" value="50" class="slider" id="profitSlider" oninput="updateSlider()"><div class="profit-display"><span id="profitPercentage">50</span><span id="profit-label">%</span></div></div></div>
         </div>
         <div class="result-card"><h2 style="color: #5D4E60;">💰 RESULTADOS FINALES</h2><div class="unit-results" id="unitResults"></div><div style="margin: 20px 0;"><h3 style="color: #5D4E60; font-size: 1.2rem; margin-bottom: 10px;">PRECIO DE VENTA TOTAL</h3><div class="final-price" id="finalPrice">$0</div></div><div style="margin: 20px 0;"><h3 style="color: #5D4E60; font-size: 1.2rem; margin-bottom: 10px;">GANANCIA NETA</h3><div class="final-price" id="profitAmount">$0</div></div></div>
+        
         <div class="card">
             <h2>🤖 Asistente de Pastelería IA</h2>
             <p class="section-description">Tu experto en costos, rentabilidad y recetas, conectado a Gemini.</p>
             <div id="chatWindow" class="chat-window"></div>
             <div class="chat-input-area"><input type="text" id="userInput" placeholder="Ej: ¿Cómo puedo hacer mi torta más rentable?"><button id="sendBtn" class="btn">Enviar</button></div>
         </div>
+
         <div class="card">
             <h2>📚 Historial de Recetas</h2>
             <p class="section-description">Guarda y carga tus cálculos para no volver a escribirlos.</p>
@@ -223,7 +224,8 @@
             selectProduct(recetaACargar.productType); document.getElementById('totalQuantity').value = recetaACargar.totalQuantity; document.getElementById('unitName').value = recetaACargar.unitName; document.getElementById('laborHours').value = recetaACargar.laborHours; document.getElementById('hourlyRate').value = recetaACargar.hourlyRate; document.getElementById('utilities').value = recetaACargar.utilities; document.getElementById('packaging').value = recetaACargar.packaging; document.getElementById('shipping').value = recetaACargar.shipping; const tbody = document.getElementById('ingredientsBody'); tbody.innerHTML = ''; if (recetaACargar.ingredientes && recetaACargar.ingredientes.length > 0) { recetaACargar.ingredientes.forEach(ing => { const newRow = tbody.insertRow(); newRow.innerHTML = `<td><input type="text" class="ingredient-name" value="${ing.nombre || ''}"></td><td><input type="number" value="${ing.cantidadUsada}" class="amount-used" step="0.01" oninput="updateCalculations()"></td><td><select class="unit" onchange="updateCalculations()"><option value="g">gramos</option><option value="ml">ml</option><option value="units">unidades</option><option value="kg">kg</option><option value="l">litros</option><option value="lb">libras</option></select></td><td><input type="number" value="${ing.cantidadPaquete}" class="package-amount" step="0.01" oninput="updateCalculations()"></td><td><input type="number" value="${ing.precioPaquete}" class="package-price" step="100" oninput="updateCalculations()"></td><td><span class="cost-display">$0</span></td><td><button class="btn btn-danger" onclick="deleteRow(this)">×</button></td>`; newRow.querySelector('.unit').value = ing.unidad; }); } if (recetaACargar.calculationMode) { selectMode(recetaACargar.calculationMode); const savedPercentage = recetaACargar.profitPercentage || 50; document.getElementById('profitSlider').value = savedPercentage; updateSlider(); } else { currentMode = null; document.querySelectorAll('.mode-card').forEach(card => card.classList.remove('active', 'professional')); document.getElementById('calculator-section').classList.remove('show'); } updateCalculations(); alert(`Receta "${nombreReceta}" cargada.`);
         }
         function eliminarReceta() { const nombreReceta = historialSelect.value; if (!nombreReceta || nombreReceta === "No hay recetas guardadas") { alert("Por favor, selecciona una receta para eliminar."); return; }; if (confirm(`¿Estás seguro de que quieres eliminar la receta "${nombreReceta}"? Esta acción no se puede deshacer.`)) { let recetas = JSON.parse(localStorage.getItem('pasteleria_recetas')) || []; recetas = recetas.filter(r => r.nombre !== nombreReceta); localStorage.setItem('pasteleria_recetas', JSON.stringify(recetas)); actualizarHistorialDropdown(); alert(`Receta "${nombreReceta}" eliminada.`); } } guardarBtn.addEventListener('click', guardarReceta); cargarBtn.addEventListener('click', cargarReceta); eliminarBtn.addEventListener('click', eliminarReceta);
-            
+        
+        // --- FUNCIÓN PARA ABRIR Y DESCARGAR COTIZACIÓN ---
         function abrirCotizacion() {
             const recipeName = document.getElementById('recipeNameInput').value.trim() || `Cotización de ${currentProduct}`;
             const productType = currentProduct.charAt(0).toUpperCase() + currentProduct.slice(1);
@@ -319,7 +321,7 @@
                                 <table class="ingredients-table">
                                     <thead><tr><th>Ingrediente</th><th style="text-align: right;">Costo en Receta</th></tr></thead>
                                     <tbody>
-                                        ${ingredientes.map(ing => `<tr><td>${ing.nombre}</td><td style="text-align: right;">${ing.costo}</td></tr>`).join('')}
+                                        ${ingredientes.filter(ing => parseFloat(ing.costo.replace(/\$|\./g, '')) > 0).map(ing => `<tr><td>${ing.nombre}</td><td style="text-align: right;">${ing.costo}</td></tr>`).join('')}
                                     </tbody>
                                 </table>
                             </div>
@@ -337,7 +339,7 @@
                             const elemento = document.getElementById('cotizacion-a-descargar');
                             const opt = {
                                 margin: 0,
-                                filename: '${recipeName.replace(/\s+/g, '_')}.pdf',
+                                filename: '${recipeName.replace(/\s+/g, '_') || 'cotizacion'}.pdf',
                                 image: { type: 'jpeg', quality: 0.98 },
                                 html2canvas: { scale: 2, useCORS: true },
                                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -365,5 +367,3 @@
     </script>
 </body>
 </html>
-
-
